@@ -1,0 +1,21 @@
+5. Problem Statement
+1. Use the below given data set
+DataSet
+2. Perform the below given activities:
+a. Create classification model using different classifiers
+b. Verify model goodness of fit
+c. Apply all the model validation techniques.
+
+=====================================================
+install.packages("caret")
+install.packages("rpart")
+library(caret)
+library(rpart)
+trctrl <- trainControl(method = "repeatedcv", number = 10, repeats = 3)
+set.seed(3333)
+dtree_fit <- train(DATA. ~ EXAMPLE, data = Example_WearableComputing_weight_lifting_exercises_biceps_curl_variations, method = "rpart",
+                   parms = list(split = "information"),
+                   trControl=trctrl,
+                   tuneLength = 10)
+dtree_fit
+prp(dtree_fit$finalModel, box.palette = "Reds", tweak = 1.2
